@@ -21,6 +21,7 @@ int main()
         printf("%d / %d = %d\n", result, i, tmpResult);
         result = tmpResult;
     }
+    
     if(result == start) {
         printf("Juhu es passt\n");
     } else {
