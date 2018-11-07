@@ -19,6 +19,5 @@ int main(){
 	int myArray[] = {1,2,3,4,5};
 	
 	printf("sumNumbers: %d\n", sumNumbersRec(myArray, 4));
-	
-	printf("sumNumbersRec: %d\n", sumNumbersRec(myArray,4));
+	printf("sumNumbersRec: %d\n", sumNumbersRec(myArray, 4));
 }
