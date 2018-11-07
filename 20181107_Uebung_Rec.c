@@ -32,10 +32,11 @@ int sumNumbersArrayRec(int numbers[], int length )
 
 int main(){
 	int myArray[] = {1,2,3,4,5};
+	int myArray_length = 5;
 	int value = 5;
 	
 	printf("Integer: sumNumbers: %d\n", sumNumbers(value));
 	printf("Integer: sumNumbersRec: %d\n", sumNumbersRec(value,0));
-	printf("Array: sumNumbersArray: %d\n", sumNumbersArray(myArray, 5));
-	printf("Array: sumNumbersArrayRec: %d\n", sumNumbersArrayRec(myArray, 5));
+	printf("Array: sumNumbersArray: %d\n", sumNumbersArray(myArray, myArray_length));
+	printf("Array: sumNumbersArrayRec: %d\n", sumNumbersArrayRec(myArray, myArray_length));
 }
