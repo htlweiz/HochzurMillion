@@ -16,21 +16,18 @@ int sumNumbersRec(int value, int sum) {
 
 int sumNumbersArray(int numbers[], int length){
 	int sum = 0;
-	for(int i = 0; i <= length; i++){
+	for(int i = 0; i < length; i++){
 		sum = sum + numbers[i];
 	} return sum;
 }
 
 int sumNumbersArrayRec(int numbers[], int length )
 {
-	/*if (length) {
+	if (length) {
 		return numbers[length-1] + sumNumbersArrayRec(numbers, length-1);
 	} else {
 		return 0;
-	}*/
-    if (length) {
-        return (numbers[length] + sumNumbersArrayRec(numbers,length-1));
-    } return numbers[0];
+	}
 }
 
 int main(){
@@ -39,6 +36,6 @@ int main(){
 	
 	printf("Integer: sumNumbers: %d\n", sumNumbers(value));
 	printf("Integer: sumNumbersRec: %d\n", sumNumbersRec(value,0));
-	printf("Array: sumNumbersArray: %d\n", sumNumbersArray(myArray, 4));
-	printf("Array: sumNumbersArrayRec: %d\n", sumNumbersArrayRec(myArray, 4));
+	printf("Array: sumNumbersArray: %d\n", sumNumbersArray(myArray, 5));
+	printf("Array: sumNumbersArrayRec: %d\n", sumNumbersArrayRec(myArray, 5));
 }
