@@ -7,11 +7,13 @@ int sumNumbers(int value) {
 	} return sum;
 }
 
-int sumNumbersRec(int value, int sum) {
+int sumNumbersRec(int value) {
 
     if(value) {
-        sum = value + sumNumbersRec(value -1, sum);
-    } return sum;
+        return value + sumNumbersRec(value-1);
+    } else {
+		return 0;
+	}
 }
 
 int sumNumbersArray(int numbers[], int length){
@@ -36,7 +38,7 @@ int main(){
 	int value = 5;
 	
 	printf("---Integer---\nsumNumbers: %d\n", sumNumbers(value));
-	printf("sumNumbersRec: %d\n", sumNumbersRec(value,0));
+	printf("sumNumbersRec: %d\n", sumNumbersRec(value));
 	printf("\n---Array---\nsumNumbersArray: %d\n", sumNumbersArray(myArray, myArray_length));
 	printf("sumNumbersArrayRec: %d\n", sumNumbersArrayRec(myArray, myArray_length));
 }
