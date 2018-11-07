@@ -23,6 +23,11 @@ int sumNumbersArray(int numbers[], int length){
 
 int sumNumbersArrayRec(int numbers[], int length )
 {
+	/*if (length) {
+		return numbers[length-1] + sumNumbersArrayRec(numbers, length-1);
+	} else {
+		return 0;
+	}*/
     if (length) {
         return (numbers[length] + sumNumbersArrayRec(numbers,length-1));
     } return numbers[0];
