@@ -2,7 +2,7 @@
 
 int main()
 {
-    char Array[3][10] = {"Kai", "Markus", "Neuper"};
+    char Array[3][10] = {"Vorname", "Name", "Nachname"};
 
     for(int i = 0; i < 3; i++)
     {
