@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+void createArrayPointer(int *pointer) {
+    for(int zeile = 0; zeile < 8; zeile++) {
+        for(int spalte = 0; spalte < 8; spalte++) {
+            *pointer++ = (zeile+1) * 10 + spalte+1;
+        }
+    }
+}
+
 void showArray(int array[8][8]) {
     for(int zeile = 0; zeile < 8; zeile++) {
         for(int spalte = 0; spalte < 8; spalte++) {
@@ -17,13 +25,15 @@ void showArrayPointer(int *pointerArray) {
 }
 
 int main(){
-    int myArray[8][8];
+    int myArray[8][8] = {0};
+    createArrayPointer(myArray);
     
+    /*
     for(int zeile = 0; zeile < 8; zeile++) {
         for(int spalte = 0; spalte < 8; spalte++) {
             myArray[zeile][spalte] = (zeile+1) * 10 + spalte+1;
         }
-    }
+    }*/
     
     //Ausgabe mit Array
     printf("Ausgabe über Array\n");
