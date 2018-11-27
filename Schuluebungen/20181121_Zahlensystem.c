@@ -3,13 +3,15 @@
 /*
 string.h:
 
+strlen (char * a)                   ---> liefert Länge des Strings
+
 strcat (char * a, char * b)         ---> hängt string b an string a an          a = a + b
 
-strncat (char * a, char * b, int n) ---> hängt n Zeichen von b an string an     a = a + b0 + b1 + b2
+strncat (char * a, char * b, int n) ---> hängt n (=3) Zeichen von b an string an     a = a + b0 + b1 + b2
 
 strcpy (char * a, char * b,)        ---> copiert string b auf string auf        a = b
 
-strncpy (char * a, char * b, int n) ---> copiert n Zeichen von b auf a          a = b0 + b1 + b2
+strncpy (char * a, char * b, int n) ---> copiert n (=3) Zeichen von b auf a          a = b0 + b1 + b2
 
 
 strings in C sind 0-terminiert:
