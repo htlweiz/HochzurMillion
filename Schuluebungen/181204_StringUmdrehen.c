@@ -15,11 +15,11 @@ void umdrehen(char * myArray) {
 }
 
 int main() {
-	char testArray[] = "abcd";
+	char testArray[] = "123456789";
 	
-	printf("Original: %s\n", testArray);
+	printf("Original:\t%s\n", testArray);
 	umdrehen(testArray);
-	printf("Umgedreht: %s\n", testArray);
+	printf("Umgedreht:\t%s\n", testArray);
 	
 	return 0;
 }
