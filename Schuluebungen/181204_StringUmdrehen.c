@@ -15,9 +15,7 @@ void umdrehen(char * myArray) {
 }
 
 int main() {
-	int max = 20;
 	char testArray[] = "abcd";
-	testArray[max-1] = '\0';
 	
 	printf("Original: %s\n", testArray);
 	umdrehen(testArray);
