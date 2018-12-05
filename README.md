@@ -10,5 +10,5 @@ test
 
 
 Zufalls zahl:
-srand(time(0));
+srand(time(0));<br>
 int x = rand();
