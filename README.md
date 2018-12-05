@@ -7,3 +7,8 @@ Hier steht Text
 
 test <br>
 test
+
+
+Zufalls zahl:
+srand(time(0));
+int x = rand();
