@@ -9,6 +9,6 @@ test <br>
 test
 
 
-Zufalls zahl:
+Zufalls zahl:<br>
 srand(time(0));<br>
 int x = rand();
