@@ -2,7 +2,7 @@
 #include <string.h>
 
 void createArray(int *Array, int length) {
-    //srand(time(0); for random
+    //srand(time(0)); for random
     int rng = rand();
     Array[length] = rng;
 }
