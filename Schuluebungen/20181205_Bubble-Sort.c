@@ -15,13 +15,23 @@ void showArrayInConsole(int *Array, int length) {
     }
 }
 
-void bubbleSort(int *Array, int position) {
-    for() {
-        
+void bubbleSort(int *Array, int length) {
+    int temp = 0;
+    int getauscht = 0;
+    for(int d = 0;d < length-1; d++) {
+        getauscht = 0;
+        for(int v = 0; v < length-1-d; v++) {
+            if(Array[v] > Array[v+1]) {
+                temp = Array[v];
+                Array[v] = Array[v+1];
+                Array[v+1] = temp;
+                getauscht = 1;
+            }
+        } if(getauscht == 0) {
+            break;
+        }
     }
 }
-
-
 
 int main()
 {
