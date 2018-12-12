@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void createArray(int Array[], int length) {
+void createArray(int *Array, int length) {
     srand(time(0));
     
     for(int i = 0; i < length; i++) {
@@ -27,7 +27,7 @@ void bubbleSort(int *Array, int length) {
     int temp = 0;
     int swaped = 0;
     
-    for(int d = 0;d < length-1; d++) {
+    for(int d = 0; d < length-1; d++) {
         swaped = 0;
         for(int i = 0; i < length-1-d; i++) {
             if(Array[i] > Array[i+1]) {
