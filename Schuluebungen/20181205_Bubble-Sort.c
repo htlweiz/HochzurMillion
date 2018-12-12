@@ -20,14 +20,15 @@ void bubbleSort(int *Array, int length) {
     int getauscht = 0;
     for(int d = 0;d < length-1; d++) {
         getauscht = 0;
-        for(int v = 0; v < length-1-d; v++) {
-            if(Array[v] > Array[v+1]) {
-                temp = Array[v];
-                Array[v] = Array[v+1];
-                Array[v+1] = temp;
+        for(int i = 0; i < length-1-d; i++) {
+            if(Array[i] > Array[i+1]) {
+                temp = Array[i];
+                Array[i] = Array[i+1];
+                Array[i+1] = temp;
                 getauscht = 1;
             }
-        } if(getauscht == 0) {
+        }
+        if(getauscht == 0) {
             break;
         }
     }
@@ -35,7 +36,7 @@ void bubbleSort(int *Array, int length) {
 
 int main()
 {
-    int length = 10;
+    int length = 25;
     int numbers[length];
 
     
