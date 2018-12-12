@@ -16,7 +16,7 @@ void showArrayInConsole(int *Array, int length) {
     }
 }
 
-void pankiswap(int *Array, int i) {
+void pankiSwap(int *Array, int i) {
     int temp = 0;
     temp = Array[i];
     Array[i] = Array[i+1];
@@ -31,7 +31,7 @@ void bubbleSort(int *Array, int length) {
         swaped = 0;
         for(int i = 0; i < length-1-d; i++) {
             if(Array[i] > Array[i+1]) {
-                pankiswap(Array, i);
+                pankiSwap(Array, i);
                 swaped = 1;
             }
         }
