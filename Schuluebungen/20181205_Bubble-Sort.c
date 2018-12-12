@@ -45,7 +45,7 @@ int bubbleSort(int *Array, int length) {
 
 int main()
 {
-    int length = 10;
+    int length = 100;
     int numbers[length];
     
     createArray(numbers, length);
@@ -57,7 +57,8 @@ int main()
     
     printf("\n\nMaximalzahl der nötigen Vergleiche wäre (%d-1)*(%d-1) = %d\n", length, length, (length-1)*(length-1));
     printf("Verbesserte Version (pro Durchlauf 1 Vergleich weniger) wäre (%d + %d + %d + ... + 3 + 2 + 1) = %d\n", length-1, length-2, length-3, (length/2)*(1+length));
-    printf("Tatsächlich benötigte Vergleiche (Ausstieg mit break, wenn fertig sortiert): %d\n", bubbleSort(numbers, length));
+    printf("Vertauschungen: %d\n", bubbleSort(numbers, length));
+    //printf("Tatsächlich benötigte Vergleiche (Ausstieg mit break, wenn fertig sortiert): %d\n", bubbleSort(numbers, length));
     
     return 0;
 }
