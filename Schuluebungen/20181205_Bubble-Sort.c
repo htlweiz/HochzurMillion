@@ -38,7 +38,6 @@ int main()
 {
     int length = 25;
     int numbers[length];
-
     
     createArray(numbers, length);
     printf("Array mit %d zufaelligen Zahlen:\n", length);
