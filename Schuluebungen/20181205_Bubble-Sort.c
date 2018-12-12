@@ -3,6 +3,7 @@
 
 void createArray(int Array[], int length) {
     srand(time(0));
+    
     for(int i = 0; i < length; i++) {
         int rng = rand();
         Array[i] = rng%100;
@@ -15,20 +16,26 @@ void showArrayInConsole(int *Array, int length) {
     }
 }
 
+void pankiswap(int *Array, int i) {
+    int temp = 0;
+    temp = Array[i];
+    Array[i] = Array[i+1];
+    Array[i+1] = temp;
+}
+
 void bubbleSort(int *Array, int length) {
     int temp = 0;
-    int getauscht = 0;
+    int swaped = 0;
+    
     for(int d = 0;d < length-1; d++) {
-        getauscht = 0;
+        swaped = 0;
         for(int i = 0; i < length-1-d; i++) {
             if(Array[i] > Array[i+1]) {
-                temp = Array[i];
-                Array[i] = Array[i+1];
-                Array[i+1] = temp;
-                getauscht = 1;
+                pankiswap(Array, i);
+                swaped = 1;
             }
         }
-        if(getauscht == 0) {
+        if(swaped == 0) {
             break;
         }
     }
