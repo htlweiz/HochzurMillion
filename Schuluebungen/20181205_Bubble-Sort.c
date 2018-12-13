@@ -1,26 +1,34 @@
 #include <stdio.h>
 #include <string.h>
 
-void createArray(int *Array, int length)
+void createArray(int *array, int length)
 {
     srand(time(0));
     
     for(int i = 0; i < length; i++)
     {
         int rng = rand();
-        Array[i] = rng%100;
+        array[i] = rng%100;
     }
 }
 
-void showArrayInConsole(int *Array, int length)
+void showArrayInConsole(int *array, int length)
 {
     for(int i = 0; i < length; i++)
     {
-        printf("%d ", Array[i]);
+        printf("%d ", array[i]);
     }
 }
 
-int bubbleSort(int *Array, int length)
+void pankiSwap(int *array, int i)
+{
+    int temp = 0;
+    temp = array[i];
+    array[i] = array[i+1];
+    array[i+1] = temp;
+}    
+
+int bubbleSort(int *array, int length)
 {
     int temp = 0;
     int swaped = 0;
@@ -31,13 +39,12 @@ int bubbleSort(int *Array, int length)
         swaped = 0;
         for(int i = 0; i < length-1 - d; i++)
         {
-            if(Array[i] > Array[i+1])
+            if(array[i] > array[i+1])
             {
-                temp = Array[i];
-                Array[i] = Array[i+1];
-                Array[i+1] = temp;
+                pankiSwap(array, i);
                 swaped = 1;
-            } numSwaps++;
+            }
+            numSwaps++;
         }
         
         if(swaped == 0)
