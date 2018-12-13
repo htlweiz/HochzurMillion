@@ -4,6 +4,7 @@
 void createArray(int *Array, int length)
 {
     srand(time(0));
+    
     for(int i = 0; i < length; i++)
     {
         int rng = rand();
@@ -19,10 +20,12 @@ void showArrayInConsole(int *Array, int length)
     }
 }
 
-void bubbleSort(int *Array, int length)
+int bubbleSort(int *Array, int length)
 {
     int temp = 0;
     int swaped = 0;
+    int numSwaps = 0;
+    
     for(int d = 0; d < length-1; d++)
     {
         swaped = 0;
@@ -34,7 +37,7 @@ void bubbleSort(int *Array, int length)
                 Array[i] = Array[i+1];
                 Array[i+1] = temp;
                 swaped = 1;
-            }
+            } numSwaps++;
         }
         
         if(swaped == 0)
@@ -42,22 +45,28 @@ void bubbleSort(int *Array, int length)
             break;
         }
     }
+    return numSwaps;
 }
 
 int main()
 {
     int length = 10;
     int numbers[length];
+    int gaus = (length/2)*(1+length);
+    int numCompare = 0;
     
     createArray(numbers, length);
     printf("Array mit %d zufaelligen Zahlen:\n", length);
     showArrayInConsole(numbers, length);
-    bubbleSort(numbers, length);
+    
+    numCompare = bubbleSort(numbers, length);
+    
     printf("\nArray mit %d zufaelligen Zahlen sortiert:\n", length);
     showArrayInConsole(numbers, length);
     
     printf("\n\nMaximalzahl der nötigen Vergleiche wäre (%d-1)*(%d-1) = %d\n", length, length, (length-1)*(length-1));
-    printf("Verbesserte Version (pro Durchlauf 1 Vergleich weniger) wäre (%d + %d + %d + ... + 3 + 2 + 1) = %d\n", length-1, length-2, length-3, (length/2)*(1+length));
+    printf("Verbesserte Version (pro Durchlauf 1 Vergleich weniger) wäre (%d + %d + %d + ... + 3 + 2 + 1) = %d\n", length-1, length-2, length-3, gaus);
+    printf("Verbesserte Verbesserte Version: %d\n", numCompare);
     
     return 0;
 }
