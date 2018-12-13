@@ -72,7 +72,7 @@ int main()
     showArrayInConsole(numbers, length);
     
     printf("\n\nMaximalzahl der nötigen Vergleiche wäre (%d-1)*(%d-1) = %d\n", length, length, (length-1)*(length-1));
-    printf("Verbesserte Version (pro Durchlauf 1 Vergleich weniger) wäre (%d + %d + %d + ... + 3 + 2 + 1) = %d\n", length-1, length-2, length-3, gaus);
+    printf("Verbesserte Version (pro Durchlauf 1 Vergleich weniger) wäre (%d + %d + %d + ... + 3 + 2 + 1) = %d\n", length, length-1, length-2, gaus);
     printf("Tatsächlich benötigte Vergleiche (Ausstieg mit break, wenn fertig sortiert): %d\n", numCompare);
     
     return 0;
