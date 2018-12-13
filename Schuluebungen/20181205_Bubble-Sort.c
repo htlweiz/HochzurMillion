@@ -59,8 +59,8 @@ int main()
 {
     int length = 10;
     int numbers[length];
-    int gaus = (length/2)*(1+length);
     int numCompare = 0;
+    int gaus = (length/2)*(1+length);
     
     createArray(numbers, length);
     printf("Array mit %d zufaelligen Zahlen:\n", length);
