@@ -82,9 +82,8 @@ int main() {
     start = clock();
     bubbleSort(numbers, length);
     finish = clock();
-    printf("\nBubblesort Dauer: %d", finish-start);
+    printf("Bubblesort Dauer: %d", finish-start);
     
-    createArray(numbers, length);
     start = clock();
     bubbleSort(numbers, length);
     finish = clock();
