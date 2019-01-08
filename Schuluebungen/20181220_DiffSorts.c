@@ -70,6 +70,43 @@ void arrayMinSort(int *x, int size) {
     }
 }
 
+
+//QUICKSORT
+int parts(int *x, int left, int right) {
+    int i = left;
+    int j = right-1;
+    int pivot = x[right];
+    int temp = 0;
+    do {
+        while(x[i] < pivot && i < right-1) {
+            i++;
+        }
+        while(x[j] >= pivot && j > left) {
+            j--;
+        }
+        if(i < j) {
+            temp = x[i];
+            x[i] = x[j];
+            x[j] = temp;
+        }
+    } while (i < j);
+    if(x[i] > pivot) {
+        x[right] = x[i];
+        x[i] = pivot;
+    }
+    return i;
+}
+
+void quickSort(int *x, int left, int right) {
+    int teiler = 0;
+    if(left <right) {
+        teiler = parts(x, left, right);
+        quickSort(x, left, teiler);
+        quickSort(x, teiler +1, right);
+    }
+}
+
+
 int main() {
     int length = 10000;
     int numbers[length];
@@ -101,6 +138,19 @@ int main() {
     arrayMinSort(numbers, length);
     finish = clock();
     printf("\nMinsort Dauer sortiert: %d", finish-start);
+    
+    
+    //QUICKSORT
+    createArray(numbers, length);
+    start = clock();
+    quickSort(numbers, 0, length);
+    finish = clock();
+    printf("\nQuicksort Dauer: %d", finish-start);
+    
+    start = clock();
+    quickSort(numbers, 0, length);
+    finish = clock();
+    printf("\nQuicksort Dauer sortiert: %d", finish-start);
     
     return 0;
 }
