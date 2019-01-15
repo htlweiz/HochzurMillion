@@ -36,6 +36,15 @@ int avgArray(int *array, int length) {
     } return sum/length;
 }
 
+void differFromAvg(int * array, int length, int average) {
+    int result = 0;
+    for(int i = 0; i < length; i++) {
+        if((array[i]*0.8) > average || (array[i]*1.2) < average) {
+            array[i] = average;
+        }
+        printf("%d ", array[i]);
+    }
+}
 
 int main() {
     int length = 10;
@@ -48,7 +57,10 @@ int main() {
     printf("\nAusgabe umgekehrt:\n");
     showArrayReverseInConsole(numbers, length);
     printf("\n\nSumme der Zahlen: %d", sumArray(numbers, length));
-    printf("\nMittelwert der Zahlen: %d", avgArray(numbers, length));
+    int average = avgArray(numbers, length);
+    printf("\nMittelwert der Zahlen: %d\n", average);
+    printf("\nArray ohne Ausreißer: \n");
+    differFromAvg(numbers, length, average);
     
     return 0;
 }
