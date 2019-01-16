@@ -22,11 +22,13 @@ void showArrayReverseInConsole(int *array, int length) {
     }
 }
 
-int sumArray(int *array, int length) {
-    int sum = 0;
-    for(int i = 0; i < length; i++) {
-        sum = sum + array[i];
-    } return sum;
+int minArray(int * array, int length) {
+    int min = array[0];
+    for (int i = 0; i < length; i++) {
+        if (array[i] < min) {
+            min = array[i];
+        }
+    } return min;
 }
 
 int avgArray(int *array, int length) {
@@ -34,6 +36,22 @@ int avgArray(int *array, int length) {
     for(int i = 0; i < length; i++) {
         sum = sum + array[i];
     } return sum/length;
+}
+
+int maxArray(int * array, int length) {
+    int max = array[0];
+    for (int i = 0; i < length; i++) {
+       if (array[i] > max) {
+           max = array[i];
+       }
+   } return max;
+}
+
+int sumArray(int *array, int length) {
+    int sum = 0;
+    for(int i = 0; i < length; i++) {
+        sum = sum + array[i];
+    } return sum;
 }
 
 void differFromAvg(int * array, int length, int average) {
@@ -46,28 +64,9 @@ void differFromAvg(int * array, int length, int average) {
     }
 }
 
-int maxArray(int * array, int length) {
-    int max = array[0];
-    for (int i = 0; i < length; i++) {
-       if (array[i] > max) {
-           max = array[i];
-       }
-   } return max;
-}
-
-int minArray(int * array, int length) {
-    int min = array[0];
-    for (int i = 0; i < length; i++) {
-        if (array[i] < min) {
-            min = array[i];
-        }
-    } return min;
-}
-
 int main() {
     int length = 10;
     int numbers[length];
-
     
     createArray(numbers,length);
     printf("Array: \n");
