@@ -7,7 +7,7 @@ void createArray(int *array, int length) {
     for(int i = 0; i < length; i++)
     {
         int rng = rand();
-        array[i] = rng%1000;
+        array[i] = rng%100;
     }
 }
 
@@ -55,11 +55,22 @@ int sumArray(int *array, int length) {
     } return sum;
 }
 
-//ToDo: vom Mittelwert +-20% nicht vom jeweiligen Arraywert, berechnen der Grenzen außerhalb der Schleife!
+/*//ToDo: vom Mittelwert +-20% nicht vom jeweiligen Arraywert, berechnen der Grenzen außerhalb der Schleife!
 void differFromAvg(int *array, int length, int average) {
     int result = 0;
     for(int i = 0; i < length; i++) {
         if((array[i]*0.8) > average || (array[i]*1.2) < average) {
+            array[i] = average;
+        }
+        printf("%d ", array[i]);
+    }
+}*/
+
+void differFromAvg_V2(int * array, int length, int average) {
+    int max = average*1.2;
+    int min = average*0.8;
+    for(int i = 0; i < length; i++) {
+        if(min > array[i] || max < array[i]) {
             array[i] = average;
         }
         printf("%d ", array[i]);
@@ -78,7 +89,7 @@ void countNumLength (int *array, int length, int *count, int countLength) {
 }
 
 int main() {
-    int length = 100;
+    int length = 10;
     int numbers[length];
     int countLength = 3;
     int count[countLength];
@@ -101,7 +112,7 @@ int main() {
     printf("\nsonstige: %d\n", count[2]);
     
     printf("\nArray without statistical outliers: \n");
-    differFromAvg(numbers, length, average);
+    differFromAvg_V2(numbers, length, average);
 
     return 0;
 }
