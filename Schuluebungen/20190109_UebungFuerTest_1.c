@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 void createArray(int *array, int length) {
     srand(time(0));
@@ -78,7 +79,7 @@ void countNumLength (int *array, int length, int *count, int countLength) {
 int main() {
     int length = 10;
     int numbers[length];
-    int countLength = 2;
+    int countLength = 3;
     int count[countLength];
     
     createArray(numbers,length);
@@ -86,19 +87,20 @@ int main() {
     showArrayInConsole(numbers, length);
     printf("\nArray reverse:\n");
     showArrayReverseInConsole(numbers, length);
+    
     printf("\n\nMin: %d", minArray(numbers, length));
     int average = avgArray(numbers, length);
     printf("\nAvg: %d\n", average);
     printf("Max: %d\n", maxArray(numbers, length));
     printf("Sum: %d\n", sumArray(numbers, length));
-    printf("\nArray without statistical outliers: \n");
-    differFromAvg(numbers, length, average);
 
-    //-----ToDo------
     countNumLength(numbers, length, count, countLength);
     printf("\n\neinstellig: %d", count[0]);
     printf("\nzweistellig: %d", count[1]);
-    printf("\nsonstige: %d", count[2]);
-    //---------------
+    printf("\nsonstige: %d\n", count[2]);
+    
+    printf("\nArray without statistical outliers: \n");
+    differFromAvg(numbers, length, average);
+
     return 0;
 }
