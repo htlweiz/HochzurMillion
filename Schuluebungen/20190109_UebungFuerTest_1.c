@@ -70,16 +70,16 @@ int main() {
 
     
     createArray(numbers,length);
-    printf("Ausgabe: \n");
+    printf("Array: \n");
     showArrayInConsole(numbers, length);
-    printf("\nAusgabe umgekehrt:\n");
+    printf("\nArray reverse:\n");
     showArrayReverseInConsole(numbers, length);
     printf("\n\nMin: %d", minArray(numbers, length));
     int average = avgArray(numbers, length);
     printf("\nAvg: %d\n", average);
     printf("Max: %d\n", maxArray(numbers, length));
     printf("Sum: %d\n", sumArray(numbers, length));
-    printf("\nArray ohne Ausreißer: \n");
+    printf("\nArray without statistical outliers: \n");
     differFromAvg(numbers, length, average);
     
     return 0;
