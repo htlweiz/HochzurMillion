@@ -7,7 +7,7 @@ void createArray(int *array, int length) {
     for(int i = 0; i < length; i++)
     {
         int rng = rand();
-        array[i] = rng%100;
+        array[i] = rng%1000;
     }
 }
 
@@ -89,7 +89,7 @@ void countNumLength (int *array, int length, int *count, int countLength) {
 }
 
 int main() {
-    int length = 10;
+    int length = 100;
     int numbers[length];
     int countLength = 3;
     int count[countLength];
