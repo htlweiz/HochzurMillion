@@ -6,7 +6,7 @@ void createArray(int *array, int length) {
     for(int i = 0; i < length; i++)
     {
         int rng = rand();
-        array[i] = rng%100;
+        array[i] = rng%1000;
     }
 }
 
@@ -64,11 +64,22 @@ void differFromAvg(int *array, int length, int average) {
     }
 }
 
+void countNumLength (int *array, int length, int *count, int countLength) {
+    int sumNumLength = 0;
+    for (int i = 0; i < countLength; i++) {
+        count[i] = 0;
+    }
+    for (int i = 0; i < length; i++) {
+        sumNumLength = log10(array[i]);
+        count[sumNumLength]++;
+    }
+}
+
 int main() {
     int length = 10;
     int numbers[length];
-    int stellenlength = 1;
-    int stellen[stellenlength];
+    int countLength = 2;
+    int count[countLength];
     
     createArray(numbers,length);
     printf("Array: \n");
@@ -82,6 +93,12 @@ int main() {
     printf("Sum: %d\n", sumArray(numbers, length));
     printf("\nArray without statistical outliers: \n");
     differFromAvg(numbers, length, average);
-    
+
+    //-----ToDo------
+    countNumLength(numbers, length, count, countLength);
+    printf("\n\neinstellig: %d", count[0]);
+    printf("\nzweistellig: %d", count[1]);
+    printf("\nsonstige: %d", count[2]);
+    //---------------
     return 0;
 }
