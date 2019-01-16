@@ -46,14 +46,23 @@ void differFromAvg(int * array, int length, int average) {
     }
 }
 
-/*int maxArray(int * array, int length) {
+int maxArray(int * array, int length) {
     int max = array[0];
     for (int i = 0; i < length; i++) {
        if (array[i] > max) {
            max = array[i];
        }
    } return max;
-}*/
+}
+
+int minArray(int * array, int length) {
+    int min = array[0];
+    for (int i = 0; i < length; i++) {
+        if (array[i] < min) {
+            min = array[i];
+        }
+    } return min;
+}
 
 int main() {
     int length = 10;
@@ -65,9 +74,11 @@ int main() {
     showArrayInConsole(numbers, length);
     printf("\nAusgabe umgekehrt:\n");
     showArrayReverseInConsole(numbers, length);
-    printf("\n\nSumme der Zahlen: %d", sumArray(numbers, length));
+    printf("\n\nMin: %d", minArray(numbers, length));
     int average = avgArray(numbers, length);
-    printf("\nMittelwert der Zahlen: %d\n", average);
+    printf("\nAvg: %d\n", average);
+    printf("Max: %d\n", maxArray(numbers, length));
+    printf("Sum: %d\n", sumArray(numbers, length));
     printf("\nArray ohne Ausreißer: \n");
     differFromAvg(numbers, length, average);
     
