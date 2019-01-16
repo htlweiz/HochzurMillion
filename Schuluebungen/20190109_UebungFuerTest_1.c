@@ -55,6 +55,7 @@ int sumArray(int *array, int length) {
     } return sum;
 }
 
+//ToDo: vom Mittelwert +-20% nicht vom jeweiligen Arraywert, berechnen der Grenzen außerhalb der Schleife!
 void differFromAvg(int *array, int length, int average) {
     int result = 0;
     for(int i = 0; i < length; i++) {
