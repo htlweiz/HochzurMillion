@@ -77,7 +77,7 @@ void countNumLength (int *array, int length, int *count, int countLength) {
 }
 
 int main() {
-    int length = 10;
+    int length = 100;
     int numbers[length];
     int countLength = 3;
     int count[countLength];
